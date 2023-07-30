@@ -18,7 +18,6 @@ app.use(function (req, res, next) {
 })
 
 let posts = []
-let nextId = 1
 
 app.get("/posts", (req, res) => {
 	res.send(JSON.stringify(posts))
@@ -31,7 +30,7 @@ app.get("/posts/:id", (req, res) => {
 })
 
 app.post("/posts", (req, res) => {
-	posts.push({ ...req.body, id: nextId++, created: Date.now() })
+	posts.push({ ...req.body, created: Date.now() })
 	res.status(204)
 	res.end()
 })
