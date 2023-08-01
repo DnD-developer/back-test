@@ -24,7 +24,7 @@ app.get("/posts", (req, res) => {
 })
 
 app.get("/posts/:id", (req, res) => {
-	const postId = Number(req.params.id)
+	const postId = req.params.id
 	const index = posts.findIndex(o => o.id === postId)
 	res.send(JSON.stringify({ post: posts[index] }))
 })
