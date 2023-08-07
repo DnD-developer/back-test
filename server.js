@@ -36,7 +36,7 @@ app.post("/posts", (req, res) => {
 })
 
 app.put("/posts/:id", (req, res) => {
-	const postId = Number(req.params.id)
+	const postId = req.params.id
 	posts = posts.map(o => {
 		if (o.id === postId) {
 			return {
